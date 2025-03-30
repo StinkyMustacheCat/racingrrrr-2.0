@@ -251,7 +251,10 @@ mesh = SubResource("PlaneMesh_byvj6")
 [node name="portal" type="Area3D" parent="." node_paths=PackedStringArray("destino")]
 transform = Transform3D(0.305563, 0.254957, 0, -16.5772, 0.00469955, 0, 0, 0, 16.58, -64.3083, 23.3643, 52.3499)
 script = ExtResource("6_qacvi")
-destino = NodePath("../destino_portal")
+destino = NodePath("destino_portal")
+
+[node name="destino_portal" type="Marker3D" parent="portal"]
+transform = Transform3D(0.00111155, -0.0603033, 0, 3.9209, 0.0722728, 0, 0, 0, 0.0603136, 0.126771, 454.94, -3.31403)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="portal"]
 material_override = SubResource("StandardMaterial3D_1xm8v")
@@ -260,9 +263,6 @@ mesh = SubResource("CylinderMesh_b3j1t")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="portal"]
 transform = Transform3D(1, -1.86265e-09, 0, 1.86265e-09, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CylinderShape3D_gh4gx")
-
-[node name="destino_portal" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.7207, 23.4008, -2.59674)
 
 [node name="pausa" parent="." instance=ExtResource("8_qacvi")]
 

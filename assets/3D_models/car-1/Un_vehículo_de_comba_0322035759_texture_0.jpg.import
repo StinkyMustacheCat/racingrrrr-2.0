@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cbw1oex4r6ubc"
+path.s3tc="res://.godot/imported/Un_vehículo_de_comba_0322035759_texture_0.jpg-71535216a10e7b7249bcbb2e20dc3e1e.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "ad5142c79c0f3ed6d13f25bc2eb9416c"
+}
+
+[deps]
+
+source_file="res://assets/3D_models/car-1/Un_vehículo_de_comba_0322035759_texture_0.jpg"
+dest_files=["res://.godot/imported/Un_vehículo_de_comba_0322035759_texture_0.jpg-71535216a10e7b7249bcbb2e20dc3e1e.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

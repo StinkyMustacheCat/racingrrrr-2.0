@@ -1,26 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5y0sn4jurx2k"]
+[gd_scene load_steps=5 format=3 uid="uid://c5y0sn4jurx2k"]
 
-[ext_resource type="Script" uid="uid://do50svg035i78" path="res://scrips/cars/tempest.gd" id="1_vprv1"]
+[ext_resource type="Script" uid="uid://dhrhyehucgehf" path="res://test/tempet_test_2/tempest_test_2.gd" id="1_or2b5"]
 [ext_resource type="PackedScene" uid="uid://df3i3rhmc7qmy" path="res://assets/3D_models/car-2/Red_Rover_0325085230_texture.glb" id="2_or2b5"]
+[ext_resource type="Script" uid="uid://djovbpr3qwx7h" path="res://test/tempet_test_2/camera_3d.gd" id="2_vycvr"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_qnqmw"]
-size = Vector3(1.26354, 0.889221, 1.74604)
+[sub_resource type="BoxShape3D" id="BoxShape3D_vycvr"]
+size = Vector3(1.98906, 0.877502, 1.23822)
 
 [node name="tempest_scene" type="Node3D"]
 
-[node name="Tempest_(Cha_body)" type="CharacterBody3D" parent="." groups=["carro"]]
-transform = Transform3D(0.039905, 0, 0.999203, 0, 1, 0, -0.999203, 0, 0.039905, -0.470773, 21.8142, -4.53865)
-script = ExtResource("1_vprv1")
-max_reverse_speed = 6.0
-turn_speed_multiplier = 1.0
-air_turn_speed_factor = 0.1
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." groups=["carro"]]
+transform = Transform3D(-0.0378995, 0, 0.999282, 0, 1, 0, -0.999282, 0, -0.0378995, 0, 22.7487, -0.260157)
+script = ExtResource("1_or2b5")
 
-[node name="Camera3D2" type="Camera3D" parent="Tempest_(Cha_body)"]
-transform = Transform3D(0.994256, 0, -0.107028, 0, 1, 0, 0.107028, 0, 0.994256, -0.195212, 2.92194, 2.91356)
+[node name="Red_Rover_0325085230_texture" parent="CharacterBody3D" instance=ExtResource("2_or2b5")]
+transform = Transform3D(-0.0348929, -0.00523346, -0.999378, -0.148327, 0.988938, 0, 0.988323, 0.148235, -0.0352832, 0, 0.939594, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tempest_(Cha_body)"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0925956, 2.07473, 0.121891)
-shape = SubResource("BoxShape3D_qnqmw")
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Red_Rover_0325085230_texture" node_paths=PackedStringArray("target")]
+transform = Transform3D(0.00383178, -0.148327, 0.988931, 0.000574715, 0.988938, 0.148326, -0.999992, 0, 0.00387464, 2.54332, 1.05937, 0.0141182)
+script = ExtResource("2_vycvr")
+target = NodePath("../..")
+max_distance = 5.0
 
-[node name="tempest" parent="Tempest_(Cha_body)" instance=ExtResource("2_or2b5")]
-transform = Transform3D(-0.11019, -0.0115348, -0.993844, -0.104112, 0.994566, 0, 0.988443, 0.103471, -0.110792, 0.09798, 2.21271, 0.052742)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(-0.0352832, -2.39217e-09, -0.999378, -1.49012e-08, 1, 0, 0.999378, 4.46431e-08, -0.0352832, -0.0099214, 0.80467, -0.0173825)
+shape = SubResource("BoxShape3D_vycvr")

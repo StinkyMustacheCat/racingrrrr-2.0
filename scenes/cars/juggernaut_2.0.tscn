@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://5nfr7m3wamg"]
+
+[ext_resource type="Script" uid="uid://bk80jmocvqa0d" path="res://scrips/cars/juggernaut_2.0.gd" id="1_3oqb2"]
+[ext_resource type="PackedScene" uid="uid://sjnybmnb3ury" path="res://assets/3D_models/car-1/Un_vehículo_de_comba_0322035759_texture.glb" id="2_bv8xe"]
+[ext_resource type="Script" uid="uid://djgxepniym4jn" path="res://scrips/camera/camera_1.gd" id="2_vxs55"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ltbac"]
+size = Vector3(1.97689, 0.71344, 0.789913)
+
+[node name="juggernaut" type="Node3D"]
+
+[node name="Juggernaut_(Cha_body)" type="CharacterBody3D" parent="." groups=["carro"]]
+transform = Transform3D(0.00268782, 0, 0.999996, 0, 1, 0, -0.999996, 0, 0.00268782, -0.356567, 21.7568, -2.47833)
+script = ExtResource("1_3oqb2")
+
+[node name="Camera3D" type="Camera3D" parent="Juggernaut_(Cha_body)"]
+transform = Transform3D(0.996221, 0, -0.0868606, 0, 1, 0, 0.0868606, 0, 0.996221, -0.250108, 3.05382, 2.93818)
+script = ExtResource("2_vxs55")
+
+[node name="juggernaut" parent="Juggernaut_(Cha_body)" instance=ExtResource("2_bv8xe")]
+transform = Transform3D(0.0474726, 0, 0.998873, 0, 1, 0, -0.998873, 0, 0.0474726, -0.0200539, 2.19694, 0.0268144)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Juggernaut_(Cha_body)"]
+transform = Transform3D(0.0474726, 0, 0.998873, 0, 1, 0, -0.998873, 0, 0.0474726, -0.0131369, 2.13369, 0.0261119)
+shape = SubResource("BoxShape3D_ltbac")
+
+[node name="RayCast3D" type="RayCast3D" parent="Juggernaut_(Cha_body)"]
+transform = Transform3D(0.999993, 0.00268697, -0.00275536, -0.00268697, -0.0251301, -0.999681, -0.00275536, 0.999681, -0.0251227, -0.00198174, 2.11427, -0.737467)
