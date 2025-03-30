@@ -1,5 +1,4 @@
 extends CharacterBody3D
-
 # Tempest
 @export var acceleration: float = 11.0  
 @export var max_speed: float = 28.0  
@@ -16,7 +15,7 @@ extends CharacterBody3D
 @export var drift_inertia: float = 0.85 
 @export var stability_control: float = 0.1  
 @export var high_speed_turn_reduction: float = 0.8  
-@export var air_turn_speed_factor: float = 0.5 
+@export var air_turn_speed_factor: float = 0.1 
 
 var velocity_forward: float = 0.0  
 var handbrake_active: bool = false  

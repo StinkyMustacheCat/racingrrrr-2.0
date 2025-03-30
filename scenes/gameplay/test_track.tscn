@@ -1,8 +1,7 @@
-[gd_scene load_steps=51 format=3 uid="uid://caui5rlsluobi"]
+[gd_scene load_steps=50 format=3 uid="uid://caui5rlsluobi"]
 
 [ext_resource type="Script" uid="uid://7ou8g5qmnig4" path="res://test/test_track.gd" id="1_tpj5p"]
 [ext_resource type="Texture2D" uid="uid://coqdw6knemqis" path="res://assets/images/arena.jpeg" id="2_e366e"]
-[ext_resource type="PackedScene" uid="uid://sjnybmnb3ury" path="res://assets/3D_models/car-1/Un_vehículo_de_comba_0322035759_texture.glb" id="2_lqdmm"]
 [ext_resource type="Texture2D" uid="uid://bu2c8xegmc2is" path="res://assets/images/Asfalt-texture.png" id="3_lvmjd"]
 [ext_resource type="Texture2D" uid="uid://c6egcr2l17xl" path="res://assets/images/Asfalt-texture-2.png" id="4_tpj5p"]
 [ext_resource type="Texture2D" uid="uid://bgqhr7k41xyj8" path="res://assets/images/structured-red-perforated-metal-texture-aluminium-grating-abstract-metallic-background-illustration-vector.jpg" id="5_lvmjd"]
@@ -109,10 +108,6 @@ albedo_texture = ExtResource("6_tpj5p")
 
 [node name="test_track" type="Node3D"]
 script = ExtResource("1_tpj5p")
-
-[node name="Un_vehículo_de_comba_0322035759_texture" parent="." instance=ExtResource("2_lqdmm")]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Un_vehículo_de_comba_0322035759_texture"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.00600386, 0.999982, 0, -0.999982, -0.00600386, -3.89171, 54.716, 0)
@@ -263,6 +258,22 @@ mesh = SubResource("CylinderMesh_b3j1t")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="portal"]
 transform = Transform3D(1, -1.86265e-09, 0, 1.86265e-09, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CylinderShape3D_gh4gx")
+
+[node name="portal2" type="Area3D" parent="." node_paths=PackedStringArray("destino")]
+transform = Transform3D(0.305563, 0.254957, 0, -16.5772, 0.00469955, 0, 0, 0, 16.58, -34.1387, -2.06213, -0.186954)
+script = ExtResource("6_qacvi")
+destino = NodePath("destino_portal")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="portal2"]
+material_override = SubResource("StandardMaterial3D_1xm8v")
+mesh = SubResource("CylinderMesh_b3j1t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="portal2"]
+transform = Transform3D(1, -1.86265e-09, 0, 1.86265e-09, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_gh4gx")
+
+[node name="destino_portal" type="Marker3D" parent="portal2"]
+transform = Transform3D(0.00111155, -0.0603033, 0, 3.9209, 0.0722728, 0, 0, 0, 0.0603136, -1.44006, 338.486, -0.145342)
 
 [node name="pausa" parent="." instance=ExtResource("8_qacvi")]
 

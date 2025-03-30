@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c5y0sn4jurx2k"]
 
-[ext_resource type="Script" uid="uid://dhrhyehucgehf" path="res://test/tempet_test_2/tempest_test_2.gd" id="1_or2b5"]
+[ext_resource type="Script" uid="uid://do50svg035i78" path="res://scrips/cars/tempest.gd" id="1_vprv1"]
 [ext_resource type="PackedScene" uid="uid://df3i3rhmc7qmy" path="res://assets/3D_models/car-2/Red_Rover_0325085230_texture.glb" id="2_or2b5"]
 [ext_resource type="Script" uid="uid://djovbpr3qwx7h" path="res://test/tempet_test_2/camera_3d.gd" id="2_vycvr"]
 
@@ -11,7 +11,7 @@ size = Vector3(1.98906, 0.877502, 1.23822)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." groups=["carro"]]
 transform = Transform3D(-0.0378995, 0, 0.999282, 0, 1, 0, -0.999282, 0, -0.0378995, 0, 22.7487, -0.260157)
-script = ExtResource("1_or2b5")
+script = ExtResource("1_vprv1")
 
 [node name="Red_Rover_0325085230_texture" parent="CharacterBody3D" instance=ExtResource("2_or2b5")]
 transform = Transform3D(-0.0348929, -0.00523346, -0.999378, -0.148327, 0.988938, 0, 0.988323, 0.148235, -0.0352832, 0, 0.939594, 0)

@@ -1,7 +1,8 @@
 extends CharacterBody3D
-#Juggernaut
+
+# Variables de ajuste
 @export var acceleration: float = 12.0  
-@export var max_speed: float = 25.0  
+@export var max_speed: float = 25.0  # Velocidad máxima normal
 @export var max_reverse_speed: float = 8.0  
 @export var friction: float = 6.0  
 @export var brake_force: float = 3.0  
@@ -15,7 +16,7 @@ extends CharacterBody3D
 @export var drift_inertia: float = 0.9 
 @export var stability_control: float = 0.9  
 @export var high_speed_turn_reduction: float = 0.8  
-@export var air_turn_speed_factor: float = 0.5 
+@export var air_turn_speed_factor: float = 0.01 
 
 var velocity_forward: float = 0.0  
 var handbrake_active: bool = false  
@@ -23,7 +24,15 @@ var drift_vector: Vector3 = Vector3.ZERO
 var previous_rotation_y: float = 0.0  # Para calcular la velocidad angular
 var angular_velocity: float = 0.0  # Velocidad angular
 
+var raycast: RayCast3D  # Raycast para detectar la inclinación de la superficie
+
+func _ready():
+	# Referencia al RayCast3D que añadiste como hijo del vehículo
+	raycast = $RayCast3D  # Asegúrate de que el nodo tenga el nombre correcto
+
 func _physics_process(delta):
+	# Lógica de movimiento y aceleración...
+	
 	var is_accelerating = Input.is_action_pressed("accelerate")
 	var is_reversing = Input.is_action_pressed("reverse")
 	handbrake_active = Input.is_action_pressed("handbrake")
@@ -84,6 +93,24 @@ func _physics_process(delta):
 	if !is_on_floor():
 		velocity.y += gravity * fall_multiplier * delta
 
+	# Aquí ajustamos la velocidad máxima dependiendo de la pendiente
+	if raycast.is_colliding():
+		var normal = raycast.get_collision_normal()
+		var angle = normal.angle_to(Vector3.UP)
+		print("Pendiente detectada con ángulo: ", angle)
+
+		# Reducción manual de velocidad según el ángulo
+		if angle == 0:  # Ángulo de 0 grados (superficie plana)
+			max_speed = 25.0  # Sin reducción
+		elif angle < 0.05:  # Pendiente suave
+			max_speed = 23.0  # Reducción ligera
+		elif angle < 0.18:  # Pendiente moderada
+			max_speed = 20.0  # Reducción fuerte
+		print("Velocidad máxima ajustada a: ", max_speed)
+	else:
+		max_speed = 25.0  # Si no hay pendiente, restauramos la velocidad normal
+
+	# Mover el vehículo
 	move_and_slide()
 
 	# Calcular la velocidad angular

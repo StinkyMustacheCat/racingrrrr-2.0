@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ckk4044kuhdsy"]
 
-[ext_resource type="Script" uid="uid://dhrhyehucgehf" path="res://test/tempet_test_2/tempest_test_2.gd" id="1_fqgbv"]
+[ext_resource type="Script" uid="uid://wy6psaspge8i" path="res://scrips/cars/juggernaut.gd" id="1_sad0l"]
 [ext_resource type="PackedScene" uid="uid://sjnybmnb3ury" path="res://assets/3D_models/car-1/Un_vehículo_de_comba_0322035759_texture.glb" id="2_fqgbv"]
 [ext_resource type="Script" uid="uid://djovbpr3qwx7h" path="res://test/tempet_test_2/camera_3d.gd" id="2_ltbac"]
 
@@ -11,7 +11,7 @@ size = Vector3(2.01113, 0.877502, 0.884384)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." groups=["carro"]]
 transform = Transform3D(-0.0378995, 0, 0.999282, 0, 1, 0, -0.999282, 0, -0.0378995, 0, 22.7487, -0.260157)
-script = ExtResource("1_fqgbv")
+script = ExtResource("1_sad0l")
 
 [node name="Un_vehículo_de_comba_0322035759_texture" parent="CharacterBody3D" instance=ExtResource("2_fqgbv")]
 transform = Transform3D(0.0136654, 0, 0.999907, 0, 1, 0, -0.999907, 0, 0.0136654, 0.00100663, 0.78347, -0.0265419)
@@ -25,3 +25,6 @@ max_distance = 5.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 transform = Transform3D(-0.0352832, -2.3922e-09, -0.999381, -1.49012e-08, 1, 0, 0.999381, 4.46437e-08, -0.0352832, -0.00153366, 0.80467, -0.0281291)
 shape = SubResource("BoxShape3D_ltbac")
+
+[node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, 0, 0.406179, 0)
