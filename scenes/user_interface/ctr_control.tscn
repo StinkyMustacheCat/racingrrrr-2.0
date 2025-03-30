@@ -1,0 +1,189 @@
+[gd_scene load_steps=5 format=3 uid="uid://kfg5cgp7s28i"]
+
+[ext_resource type="Script" uid="uid://b6no7u5tvqpgn" path="res://scrips/user_interface/ctr_control.gd" id="1_hquqh"]
+[ext_resource type="FontFile" uid="uid://cg22w5hlylg15" path="res://assets/fonts/Simbiot.ttf" id="1_rvtkc"]
+[ext_resource type="PackedScene" uid="uid://d1046e02s52h3" path="res://scenes/shader/crt_shader.tscn" id="2_r6ydx"]
+[ext_resource type="Script" uid="uid://kcjfx3kc17ix" path="res://scenes/shader/crt_shader.gd" id="4_wqfv1"]
+
+[node name="CTR control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -11.0
+offset_right = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hquqh")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -252.5
+offset_right = 252.5
+offset_bottom = 112.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_rvtkc")
+theme_override_font_sizes/font_size = 50
+text = "CRT  CONTROL"
+
+[node name="controls" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 410.36
+offset_top = 111.0
+offset_right = 700.72
+offset_bottom = 597.0
+theme_override_constants/separation = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="controls"]
+layout_mode = 2
+
+[node name="scan Lines" type="Label" parent="controls/VBoxContainer"]
+layout_mode = 2
+text = "Scan Lines"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="controls/VBoxContainer"]
+layout_mode = 2
+
+[node name="scan_line_amount" type="HSlider" parent="controls/VBoxContainer/VBoxContainer" groups=["crt_sliders"]]
+layout_mode = 2
+
+[node name="scan_line_strength" type="HSlider" parent="controls/VBoxContainer/VBoxContainer" groups=["crt_sliders"]]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="controls"]
+layout_mode = 2
+
+[node name="distorstion n noise" type="Label" parent="controls/VBoxContainer2"]
+layout_mode = 2
+text = "Distorstion n noise"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="controls/VBoxContainer2"]
+layout_mode = 2
+
+[node name="warp_amount" type="HSlider" parent="controls/VBoxContainer2/VBoxContainer" groups=["crt_sliders"]]
+layout_mode = 2
+
+[node name="noise_amount" type="HSlider" parent="controls/VBoxContainer2/VBoxContainer" groups=["crt_sliders"]]
+layout_mode = 2
+
+[node name="interference_amount" type="HSlider" parent="controls/VBoxContainer2/VBoxContainer" groups=["crt_sliders"]]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="controls"]
+layout_mode = 2
+
+[node name="grille" type="Label" parent="controls/VBoxContainer3"]
+layout_mode = 2
+text = "Grille"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="controls/VBoxContainer3"]
+layout_mode = 2
+
+[node name="grille_amount" type="HSlider" parent="controls/VBoxContainer3/VBoxContainer" groups=["crt_sliders"]]
+layout_mode = 2
+
+[node name="grille_size" type="HSlider" parent="controls/VBoxContainer3/VBoxContainer" groups=["crt_sliders"]]
+layout_mode = 2
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="controls"]
+layout_mode = 2
+
+[node name="vignette" type="Label" parent="controls/VBoxContainer4"]
+layout_mode = 2
+text = "vignette"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="controls/VBoxContainer4"]
+layout_mode = 2
+
+[node name="vignette_amount" type="HSlider" parent="controls/VBoxContainer4/VBoxContainer" groups=["crt_sliders"]]
+layout_mode = 2
+
+[node name="vignette_intensity" type="HSlider" parent="controls/VBoxContainer4/VBoxContainer" groups=["crt_sliders"]]
+layout_mode = 2
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="controls"]
+layout_mode = 2
+
+[node name="chromatic aberration" type="Label" parent="controls/VBoxContainer5"]
+layout_mode = 2
+text = "Chromatic aberration"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="controls/VBoxContainer5"]
+layout_mode = 2
+
+[node name="aberration_amount" type="HSlider" parent="controls/VBoxContainer5/VBoxContainer" groups=["crt_sliders"]]
+layout_mode = 2
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="controls"]
+layout_mode = 2
+
+[node name="roll Line" type="Label" parent="controls/VBoxContainer6"]
+layout_mode = 2
+text = "Roll Line"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="controls/VBoxContainer6"]
+layout_mode = 2
+
+[node name="roll_line_amount" type="HSlider" parent="controls/VBoxContainer6/VBoxContainer" groups=["crt_sliders"]]
+layout_mode = 2
+
+[node name="roll_speed" type="HSlider" parent="controls/VBoxContainer6/VBoxContainer" groups=["crt_sliders"]]
+layout_mode = 2
+
+[node name="VBoxContainer7" type="VBoxContainer" parent="controls"]
+layout_mode = 2
+
+[node name="pixelated" type="Label" parent="controls/VBoxContainer7"]
+layout_mode = 2
+text = "Pixelated"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="controls/VBoxContainer7"]
+layout_mode = 2
+
+[node name="pixel_strength" type="HSlider" parent="controls/VBoxContainer7/VBoxContainer" groups=["crt_sliders"]]
+layout_mode = 2
+
+[node name="crt_shader" parent="." instance=ExtResource("2_r6ydx")]
+script = ExtResource("4_wqfv1")
+
+[node name="VBoxContainer8" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 410.36
+offset_top = 546.0
+offset_right = 700.36
+offset_bottom = 622.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer8"]
+layout_mode = 2
+
+[node name="default" type="Button" parent="VBoxContainer8/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_rvtkc")
+theme_override_font_sizes/font_size = 30
+text = "Default"
+
+[node name="back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 20.0
+offset_right = 136.0
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("1_rvtkc")
+theme_override_font_sizes/font_size = 30
+text = "Back"
+
+[node name="on_off" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 128.0
+offset_right = 215.0
+offset_bottom = 192.0
+theme_override_fonts/font = ExtResource("1_rvtkc")
+theme_override_font_sizes/font_size = 25
+button_pressed = true
+text = "On/Off"
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

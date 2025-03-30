@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://bn6hev1ysypkk"]
+
+[ext_resource type="Script" uid="uid://cnbdmgudqoqgc" path="res://scrips/user_interface/menu.gd" id="1_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://b8ynjgt3odnkb" path="res://assets/images/background.png" id="1_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://bu4j1u28ond8l" path="res://assets/images/play.png" id="2_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://cwfl6wj30nuw3" path="res://assets/images/settings.png" id="3_g3eks"]
+[ext_resource type="Texture2D" uid="uid://02woarperrbw" path="res://assets/images/exit.png" id="4_v86rl"]
+[ext_resource type="PackedScene" uid="uid://d1046e02s52h3" path="res://scenes/shader/crt_shader.tscn" id="6_1lvkh"]
+[ext_resource type="Script" uid="uid://kcjfx3kc17ix" path="res://scenes/shader/crt_shader.gd" id="7_tw3gt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13sgg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6lef"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70i5f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj5lg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ytvr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 1438.0
+offset_bottom = 806.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.445, 0.445)
+texture = ExtResource("1_mhnvy")
+expand_mode = 1
+
+[node name="play_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 222.0
+offset_right = 2256.0
+offset_bottom = 1310.0
+scale = Vector2(0.24, 0.24)
+theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
+icon = ExtResource("2_4ytvr")
+
+[node name="options_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 241.0
+offset_right = 1971.0
+offset_bottom = 1329.0
+scale = Vector2(0.125, 0.125)
+theme_override_styles/normal = SubResource("StyleBoxFlat_i6lef")
+icon = ExtResource("3_g3eks")
+
+[node name="close_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 857.0
+offset_top = 219.0
+offset_right = 2785.0
+offset_bottom = 1307.0
+scale = Vector2(0.13, 0.13)
+theme_override_styles/hover = SubResource("StyleBoxFlat_70i5f")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mj5lg")
+icon = ExtResource("4_v86rl")
+
+[node name="crt_shader" parent="." instance=ExtResource("6_1lvkh")]
+position = Vector2(1.19209e-07, 9.53674e-07)
+script = ExtResource("7_tw3gt")
+
+[connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="options_button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="close_button" to="." method="_on_close_button_pressed"]

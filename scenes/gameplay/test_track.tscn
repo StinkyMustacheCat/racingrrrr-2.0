@@ -1,0 +1,283 @@
+[gd_scene load_steps=51 format=3 uid="uid://caui5rlsluobi"]
+
+[ext_resource type="Script" uid="uid://7ou8g5qmnig4" path="res://test/test_track.gd" id="1_tpj5p"]
+[ext_resource type="Texture2D" uid="uid://coqdw6knemqis" path="res://assets/images/arena.jpeg" id="2_e366e"]
+[ext_resource type="PackedScene" uid="uid://sjnybmnb3ury" path="res://assets/3D_models/car-1/Un_vehículo_de_comba_0322035759_texture.glb" id="2_lqdmm"]
+[ext_resource type="Texture2D" uid="uid://bu2c8xegmc2is" path="res://assets/images/Asfalt-texture.png" id="3_lvmjd"]
+[ext_resource type="Texture2D" uid="uid://c6egcr2l17xl" path="res://assets/images/Asfalt-texture-2.png" id="4_tpj5p"]
+[ext_resource type="Texture2D" uid="uid://bgqhr7k41xyj8" path="res://assets/images/structured-red-perforated-metal-texture-aluminium-grating-abstract-metallic-background-illustration-vector.jpg" id="5_lvmjd"]
+[ext_resource type="Script" uid="uid://2a24iymhyi5n" path="res://test/portal.gd" id="6_qacvi"]
+[ext_resource type="Texture2D" uid="uid://c06xq27dxcwfv" path="res://assets/images/portal.png" id="6_tpj5p"]
+[ext_resource type="Texture2D" uid="uid://5e6m4c4h5xwd" path="res://assets/images/racing-flag.png" id="7_lqdmm"]
+[ext_resource type="PackedScene" uid="uid://dkqd54rbdol3d" path="res://scenes/user_interface/pause.tscn" id="8_qacvi"]
+[ext_resource type="PackedScene" uid="uid://d1046e02s52h3" path="res://scenes/shader/crt_shader.tscn" id="11_gclag"]
+[ext_resource type="FontFile" uid="uid://cg22w5hlylg15" path="res://assets/fonts/Simbiot.ttf" id="11_xajko"]
+[ext_resource type="Script" uid="uid://kcjfx3kc17ix" path="res://scenes/shader/crt_shader.gd" id="13_xajko"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qacvi"]
+albedo_texture = ExtResource("2_e366e")
+
+[sub_resource type="BoxMesh" id="BoxMesh_qacvi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xy8s6"]
+size = Vector3(99.768, 86.0708, 99.9722)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gclag"]
+albedo_texture = ExtResource("3_lvmjd")
+
+[sub_resource type="BoxMesh" id="BoxMesh_lqdmm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qacvi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xajko"]
+albedo_texture = ExtResource("3_lvmjd")
+
+[sub_resource type="BoxMesh" id="BoxMesh_qwqut"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lqdmm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p0vba"]
+albedo_texture = ExtResource("4_tpj5p")
+
+[sub_resource type="BoxMesh" id="BoxMesh_py8dj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_20f1d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u25p5"]
+albedo_texture = ExtResource("4_tpj5p")
+
+[sub_resource type="BoxMesh" id="BoxMesh_mact7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ejwlq"]
+size = Vector3(0.999634, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2vspi"]
+albedo_texture = ExtResource("4_tpj5p")
+
+[sub_resource type="BoxMesh" id="BoxMesh_1xm8v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b3j1t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f5p3f"]
+albedo_texture = ExtResource("3_lvmjd")
+
+[sub_resource type="BoxMesh" id="BoxMesh_gh4gx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gclag"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqdmm"]
+albedo_texture = ExtResource("5_lvmjd")
+
+[sub_resource type="BoxMesh" id="BoxMesh_xajko"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qwqut"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_py8dj"]
+albedo_texture = ExtResource("3_lvmjd")
+
+[sub_resource type="BoxMesh" id="BoxMesh_20f1d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xajko"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mact7"]
+albedo_texture = ExtResource("4_tpj5p")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p0vba"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ejwlq"]
+albedo_texture = ExtResource("5_lvmjd")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_py8dj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b3j1t"]
+albedo_texture = ExtResource("7_lqdmm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gh4gx"]
+albedo_texture = ExtResource("7_lqdmm")
+albedo_texture_msdf = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_byvj6"]
+material = SubResource("StandardMaterial3D_gh4gx")
+size = Vector2(1.78, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xm8v"]
+albedo_texture = ExtResource("6_tpj5p")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_b3j1t"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gh4gx"]
+
+[node name="test_track" type="Node3D"]
+script = ExtResource("1_tpj5p")
+
+[node name="Un_vehículo_de_comba_0322035759_texture" parent="." instance=ExtResource("2_lqdmm")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Un_vehículo_de_comba_0322035759_texture"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.00600386, 0.999982, 0, -0.999982, -0.00600386, -3.89171, 54.716, 0)
+light_energy = 0.511
+light_indirect_energy = 4.664
+light_volumetric_fog_energy = 3.809
+light_angular_distance = 43.28
+
+[node name="trees" type="Node3D" parent="."]
+
+[node name="terrain" type="MeshInstance3D" parent="."]
+transform = Transform3D(200, 0, 0, 0, 1.55, 0, 0, 0, 200, 0, -9.36043, 0)
+material_override = SubResource("StandardMaterial3D_qacvi")
+mesh = SubResource("BoxMesh_qacvi")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="terrain"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/StaticBody3D"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -0.00149683, 0.0742269, 7.33757e-05)
+shape = SubResource("BoxShape3D_xy8s6")
+
+[node name="track_main" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.7437, 0)
+
+[node name="track" type="MeshInstance3D" parent="track_main"]
+transform = Transform3D(139.825, 0, 0, 0, 1, 0, 0, 0, 12, -16.111, 0.123, -3.354)
+material_override = SubResource("StandardMaterial3D_gclag")
+mesh = SubResource("BoxMesh_lqdmm")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="track_main/track"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="track_main/track/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999963, 0, 0, 0, 1, -0.00154004, 0.0200481, -0.000936389)
+shape = SubResource("BoxShape3D_qacvi")
+
+[node name="track 2" type="MeshInstance3D" parent="track_main"]
+transform = Transform3D(-0.214291, 0, -11.9999, 0, 1, 0, 55.8096, 0, -0.0460758, -79.9257, 0.0999994, -37.2396)
+material_override = SubResource("StandardMaterial3D_xajko")
+mesh = SubResource("BoxMesh_qwqut")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="track_main/track 2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="track_main/track 2/StaticBody3D"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, -5.58794e-09, 0, 1, 0.00796622, 0.0292416, 0.00699902)
+shape = SubResource("BoxShape3D_lqdmm")
+
+[node name="ramp1" type="MeshInstance3D" parent="track_main"]
+transform = Transform3D(66.1693, -0.100207, 0, 12.1467, 0.545879, 0, 0, 0, 9.235, -44.7353, 4.91859, -36.9992)
+material_override = SubResource("StandardMaterial3D_p0vba")
+mesh = SubResource("BoxMesh_py8dj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="track_main/ramp1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="track_main/ramp1/StaticBody3D"]
+shape = SubResource("BoxShape3D_20f1d")
+
+[node name="left_ramp" type="MeshInstance3D" parent="track_main"]
+transform = Transform3D(60.3323, 0, -1.6468, 0, 1, 0, 10.9338, 0, 9.08698, -44.795, -0.8, -50.896)
+material_override = SubResource("StandardMaterial3D_u25p5")
+mesh = SubResource("BoxMesh_mact7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="track_main/left_ramp"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="track_main/left_ramp/StaticBody3D"]
+transform = Transform3D(0.999992, 0, 8.19564e-08, 0, 1, 0, 9.53674e-07, 0, 1, 0.000199974, -0.0959425, -0.000565052)
+shape = SubResource("BoxShape3D_ejwlq")
+
+[node name="rigth_ramp" type="MeshInstance3D" parent="track_main"]
+transform = Transform3D(62.3291, 0, 1.65124, 0, 1, 0, -11.3271, 0, 9.08618, -44.795, -0.8, -23.502)
+material_override = SubResource("StandardMaterial3D_2vspi")
+mesh = SubResource("BoxMesh_1xm8v")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="track_main/rigth_ramp"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="track_main/rigth_ramp/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 2.38419e-07, 0, 1, 0.00019145, 0.156242, 0.001019)
+shape = SubResource("BoxShape3D_b3j1t")
+
+[node name="gigant_ramp" type="MeshInstance3D" parent="track_main"]
+transform = Transform3D(76.3854, -0.120379, 0, 9.26259, 0.992728, 0, 0, 0, 27.625, 23.185, 2.80262, -37.322)
+material_override = SubResource("StandardMaterial3D_f5p3f")
+mesh = SubResource("BoxMesh_gh4gx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="track_main/gigant_ramp"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="track_main/gigant_ramp/StaticBody3D"]
+shape = SubResource("BoxShape3D_gclag")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="track_main"]
+transform = Transform3D(-5.82083e-06, 0, -27.795, 0, 1, 0, 133.165, 0, -1.21496e-06, 75.087, -5.951, 7.81)
+material_override = SubResource("StandardMaterial3D_lqdmm")
+mesh = SubResource("BoxMesh_xajko")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="track_main/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="track_main/MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_qwqut")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="track_main"]
+transform = Transform3D(57.6709, 0.0555253, 0, -3.20714, 0.998457, 0, 0, 0, -45.8, 32.7769, -5.951, 51.35)
+material_override = SubResource("StandardMaterial3D_py8dj")
+mesh = SubResource("BoxMesh_20f1d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="track_main/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="track_main/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_xajko")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="track_main"]
+transform = Transform3D(48.1855, 0.0555253, 0, -2.67965, 0.998457, 0, 0, 0, -36.74, -13.744, -5.951, 51.35)
+material_override = SubResource("StandardMaterial3D_mact7")
+mesh = SubResource("BoxMesh_20f1d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="track_main/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="track_main/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("BoxShape3D_p0vba")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="track_main"]
+transform = Transform3D(26.6888, 0.0555253, 0, -1.48419, 0.998457, 0, 0, 0, -21.335, -47.858, -5.951, 51.35)
+material_override = SubResource("StandardMaterial3D_ejwlq")
+mesh = SubResource("BoxMesh_20f1d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="track_main/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="track_main/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("BoxShape3D_py8dj")
+
+[node name="StaticBody3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.77, 0, 0, 0, 1, 0, 0, 0, 5.755, -8.10675, 21.3954, -3.30134)
+material_override = SubResource("StandardMaterial3D_b3j1t")
+mesh = SubResource("PlaneMesh_byvj6")
+
+[node name="portal" type="Area3D" parent="." node_paths=PackedStringArray("destino")]
+transform = Transform3D(0.305563, 0.254957, 0, -16.5772, 0.00469955, 0, 0, 0, 16.58, -64.3083, 23.3643, 52.3499)
+script = ExtResource("6_qacvi")
+destino = NodePath("../destino_portal")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="portal"]
+material_override = SubResource("StandardMaterial3D_1xm8v")
+mesh = SubResource("CylinderMesh_b3j1t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="portal"]
+transform = Transform3D(1, -1.86265e-09, 0, 1.86265e-09, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_gh4gx")
+
+[node name="destino_portal" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.7207, 23.4008, -2.59674)
+
+[node name="pausa" parent="." instance=ExtResource("8_qacvi")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -73.0
+offset_right = 426.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_xajko")
+theme_override_font_sizes/font_size = 50
+text = "Lap Time = "
+
+[node name="crt_shader" parent="." instance=ExtResource("11_gclag")]
+script = ExtResource("13_xajko")

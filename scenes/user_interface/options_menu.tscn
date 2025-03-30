@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3lcwsgs0e5xi"]
+
+[ext_resource type="Script" uid="uid://dyjmpmk8la2ka" path="res://scrips/user_interface/options.gd" id="1_mbbnk"]
+[ext_resource type="FontFile" uid="uid://cg22w5hlylg15" path="res://assets/fonts/Simbiot.ttf" id="2_4ovdb"]
+[ext_resource type="PackedScene" uid="uid://d1046e02s52h3" path="res://scenes/shader/crt_shader.tscn" id="3_ixjff"]
+[ext_resource type="Script" uid="uid://kcjfx3kc17ix" path="res://scenes/shader/crt_shader.gd" id="4_4ovdb"]
+
+[node name="options_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mbbnk")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 240.0
+offset_top = 91.0
+offset_right = 783.0
+offset_bottom = 259.0
+theme_override_fonts/font = ExtResource("2_4ovdb")
+theme_override_font_sizes/font_size = 75
+text = "options"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 360.705
+offset_top = 231.0
+offset_right = 679.705
+offset_bottom = 299.0
+
+[node name="crt_name" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4ovdb")
+theme_override_font_sizes/font_size = 30
+text = "CRT  CONTROL"
+
+[node name="Button" type="Button" parent="VBoxContainer/crt_name"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 4.0
+offset_right = 318.0
+offset_bottom = 61.0
+
+[node name="crt_shader" parent="." instance=ExtResource("3_ixjff")]
+script = ExtResource("4_4ovdb")
+
+[node name="back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 20.0
+offset_right = 136.0
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("2_4ovdb")
+theme_override_font_sizes/font_size = 30
+text = "Back"
+
+[connection signal="pressed" from="VBoxContainer/crt_name/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

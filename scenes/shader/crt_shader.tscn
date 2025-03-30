@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1046e02s52h3"]
+
+[ext_resource type="Shader" uid="uid://c6h7wvevdx86q" path="res://scenes/shader/crt_shader_final.gdshader" id="1_804ps"]
+[ext_resource type="Texture2D" uid="uid://bnr30y6nyvsqw" path="res://assets/images/transparent_texture.png" id="2_804ps"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7o08a"]
+shader = ExtResource("1_804ps")
+shader_parameter/resolution = Vector2(320, 180)
+shader_parameter/scan_line_amount = 1.0
+shader_parameter/scan_line_strength = -8.0
+shader_parameter/warp_amount = 0.1
+shader_parameter/noise_amount = 0.03
+shader_parameter/interference_amount = 0.2
+shader_parameter/grille_amount = 0.1
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.6
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/aberration_amount = 0.5
+shader_parameter/roll_line_amount = 0.3
+shader_parameter/roll_speed = 1.0
+shader_parameter/pixel_strength = -2.0
+
+[node name="crt_shader" type="Node2D"]
+scale = Vector2(32.465, 32.465)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_7o08a")
+position = Vector2(17.7749, 9.99973)
+rotation = -3.14159
+scale = Vector2(-0.0184316, -0.0184096)
+texture = ExtResource("2_804ps")
+metadata/_edit_group_ = true

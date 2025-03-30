@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://7aof82nxx44w"]
+
+[ext_resource type="Script" uid="uid://bcxhyeik88l3o" path="res://scrips/user_interface/car_seleccion.gd" id="1_iwhj3"]
+[ext_resource type="Texture2D" uid="uid://cpd3qabtiga6o" path="res://assets/images/car1.png" id="2_cv48s"]
+[ext_resource type="Texture2D" uid="uid://eg48ticdjtbw" path="res://assets/images/car2.png" id="3_uodwd"]
+[ext_resource type="PackedScene" uid="uid://d1046e02s52h3" path="res://scenes/shader/crt_shader.tscn" id="4_cv48s"]
+[ext_resource type="Script" uid="uid://kcjfx3kc17ix" path="res://scenes/shader/crt_shader.gd" id="5_uodwd"]
+
+[node name="car_seleccion" type="Node2D"]
+script = ExtResource("1_iwhj3")
+
+[node name="car_1" type="Sprite2D" parent="."]
+position = Vector2(317, 278)
+scale = Vector2(0.653693, 0.653693)
+texture = ExtResource("2_cv48s")
+
+[node name="button" type="Button" parent="car_1"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -355.0
+offset_top = -246.0
+offset_right = -366.0
+offset_bottom = -252.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="car_2" type="Sprite2D" parent="."]
+position = Vector2(847.973, 279.625)
+scale = Vector2(0.656188, 0.656188)
+texture = ExtResource("3_uodwd")
+
+[node name="button2" type="Button" parent="car_2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -371.804
+offset_top = -255.453
+offset_right = -363.804
+offset_bottom = -247.453
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="crt_shader" parent="car_2" instance=ExtResource("4_cv48s")]
+position = Vector2(-1292.27, -426.135)
+scale = Vector2(49.4751, 49.4751)
+script = ExtResource("5_uodwd")
+
+[connection signal="pressed" from="car_1/button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="car_2/button2" to="." method="_on_button_2_pressed"]

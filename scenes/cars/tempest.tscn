@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5y0sn4jurx2k"]
+
+[ext_resource type="Script" uid="uid://do50svg035i78" path="res://scrips/cars/tempest.gd" id="1_vprv1"]
+[ext_resource type="PackedScene" uid="uid://df3i3rhmc7qmy" path="res://assets/3D_models/car-2/Red_Rover_0325085230_texture.glb" id="2_or2b5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qnqmw"]
+size = Vector3(1.26354, 0.889221, 1.74604)
+
+[node name="tempest_scene" type="Node3D"]
+
+[node name="Tempest_(Cha_body)" type="CharacterBody3D" parent="." groups=["carro"]]
+transform = Transform3D(0.039905, 0, 0.999203, 0, 1, 0, -0.999203, 0, 0.039905, -0.470773, 21.8142, -4.53865)
+script = ExtResource("1_vprv1")
+max_reverse_speed = 6.0
+turn_speed_multiplier = 1.0
+air_turn_speed_factor = 0.1
+
+[node name="Camera3D2" type="Camera3D" parent="Tempest_(Cha_body)"]
+transform = Transform3D(0.994256, 0, -0.107028, 0, 1, 0, 0.107028, 0, 0.994256, -0.195212, 2.92194, 2.91356)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tempest_(Cha_body)"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0925956, 2.07473, 0.121891)
+shape = SubResource("BoxShape3D_qnqmw")
+
+[node name="tempest" parent="Tempest_(Cha_body)" instance=ExtResource("2_or2b5")]
+transform = Transform3D(-0.11019, -0.0115348, -0.993844, -0.104112, 0.994566, 0, 0.988443, 0.103471, -0.110792, 0.09798, 2.21271, 0.052742)

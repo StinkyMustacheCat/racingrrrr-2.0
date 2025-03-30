@@ -1,0 +1,70 @@
+[gd_scene load_steps=12 format=3 uid="uid://cu72e2w1qumjh"]
+
+[ext_resource type="Script" uid="uid://wy6psaspge8i" path="res://scrips/cars/juggernaut.gd" id="1_6g2ev"]
+[ext_resource type="PackedScene" uid="uid://sjnybmnb3ury" path="res://assets/3D_models/car-1/Un_vehículo_de_comba_0322035759_texture.glb" id="1_vxf6l"]
+[ext_resource type="PackedScene" uid="uid://df3i3rhmc7qmy" path="res://assets/3D_models/car-2/Red_Rover_0325085230_texture.glb" id="2_7rqj8"]
+[ext_resource type="Script" uid="uid://do50svg035i78" path="res://scrips/cars/tempest.gd" id="3_0jc5w"]
+[ext_resource type="Texture2D" uid="uid://coqdw6knemqis" path="res://assets/images/arena.jpeg" id="3_6g2ev"]
+[ext_resource type="PackedScene" uid="uid://dj704ljrif7aq" path="res://scenes/shader/crt_shader.tscn" id="6_65mac"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vqiml"]
+size = Vector3(1.97689, 0.71344, 0.789913)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_65mac"]
+size = Vector3(2.00128, 0.889221, 1.2066)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7rqj8"]
+albedo_texture = ExtResource("3_6g2ev")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6g2ev"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0jc5w"]
+size = Vector3(1.99625, 0.00610352, 1.99731)
+
+[node name="racing_gmode" type="Node3D"]
+
+[node name="Juggernaut_(Cha_body)" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.998274, 0, -0.0587314, 0, 1, 0, 0.0587314, 0, 0.998274, -0.356567, -0.131881, 0)
+script = ExtResource("1_6g2ev")
+
+[node name="Camera3D" type="Camera3D" parent="Juggernaut_(Cha_body)"]
+transform = Transform3D(0.996221, 0, -0.0868606, 0, 1, 0, 0.0868606, 0, 0.996221, -0.250147, 3.05382, 2.92363)
+
+[node name="juggernaut" parent="Juggernaut_(Cha_body)" instance=ExtResource("1_vxf6l")]
+transform = Transform3D(0.0474726, 0, 0.998873, 0, 1, 0, -0.998873, 0, 0.0474726, -0.0200539, 2.19694, 0.0268144)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Juggernaut_(Cha_body)"]
+transform = Transform3D(0.0474726, 0, 0.998873, 0, 1, 0, -0.998873, 0, 0.0474726, -0.0131369, 2.13369, 0.0261119)
+shape = SubResource("BoxShape3D_vqiml")
+
+[node name="Tempest_(Cha_body)" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.470773, 0, 0)
+script = ExtResource("3_0jc5w")
+acceleration = 8.0
+max_reverse_speed = 6.0
+
+[node name="Camera3D2" type="Camera3D" parent="Tempest_(Cha_body)"]
+transform = Transform3D(0.989399, 0, -0.14522, 0, 1, 0, 0.14522, 0, 0.989399, -0.307218, 2.92194, 2.90389)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tempest_(Cha_body)"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0880432, 2.07473, 0.0511169)
+shape = SubResource("BoxShape3D_65mac")
+
+[node name="tempest" parent="Tempest_(Cha_body)" instance=ExtResource("2_7rqj8")]
+transform = Transform3D(-0.11019, -0.0115348, -0.993844, -0.104112, 0.994566, 0, 0.988443, 0.103471, -0.110792, 0.09798, 2.21271, 0.052742)
+
+[node name="Enviroment" type="Node3D" parent="."]
+
+[node name="terrain" type="MeshInstance3D" parent="Enviroment"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.0301156, 0.0238905, -0.139988)
+material_override = SubResource("StandardMaterial3D_7rqj8")
+mesh = SubResource("PlaneMesh_6g2ev")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Enviroment/terrain"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enviroment/terrain/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001, -0.00261313, 0)
+shape = SubResource("BoxShape3D_0jc5w")
+
+[node name="crt_shader" parent="." instance=ExtResource("6_65mac")]
