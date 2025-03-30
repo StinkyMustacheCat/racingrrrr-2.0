@@ -127,7 +127,7 @@ func _set_slider_initial_values():
 
 func _on_slider_value_changed(value):
 	print("Nuevo valor del slider:", value)
-	print("Valor actualizado de CrtSettings.scan_line_amount:", CrtSettings.scan_line_amount)  # Ahora debería funcionar
+	print("Valor actualizado de CrtSettings.scan_line_amount:", CrtSettings.scan_line_amount)
 	_update_slider_values()  # Actualiza los valores de los sliders en el diccionario
 	_apply_shader_values()  # Aplica los valores al shader
 
