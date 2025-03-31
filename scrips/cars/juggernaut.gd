@@ -28,7 +28,7 @@ var raycast: RayCast3D  # Raycast para detectar la inclinación de la superficie
 
 func _ready():
 	# Referencia al RayCast3D que añadiste como hijo del vehículo
-	raycast = $RayCast3D  # Asegúrate de que el nodo tenga el nombre correcto
+	raycast = $RayCast3D
 
 func _physics_process(delta):
 	# Lógica de movimiento y aceleración...
@@ -102,10 +102,10 @@ func _physics_process(delta):
 		# Reducción manual de velocidad según el ángulo
 		if angle == 0:  # Ángulo de 0 grados (superficie plana)
 			max_speed = 25.0  # Sin reducción
-		elif angle < 0.05:  # Pendiente suave
-			max_speed = 23.0  # Reducción ligera
-		elif angle < 0.18:  # Pendiente moderada
-			max_speed = 20.0  # Reducción fuerte
+		elif angle < 0.056:  # Pendiente suave
+			max_speed = 24.0  # Reducción ligera
+		elif angle < 0.19:  # Pendiente moderada
+			max_speed = 23.0  # Reducción fuerte
 		print("Velocidad máxima ajustada a: ", max_speed)
 	else:
 		max_speed = 25.0  # Si no hay pendiente, restauramos la velocidad normal
